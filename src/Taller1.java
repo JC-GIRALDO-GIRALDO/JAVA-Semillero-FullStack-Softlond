@@ -1,3 +1,6 @@
+import java.text.DecimalFormat;
+import java.util.Random;
+
 import javax.swing.JOptionPane;
 
 public class Taller1 {
@@ -178,8 +181,394 @@ public class Taller1 {
         } while (numeroIngresado != numeroAdivinar);
         */
 
+        /* 
         //-9)
         //-Escribe un programa que solicite al usuario un número entero positivo y calcule su factorial.
+
+        // Solicitar al usuario un número entero positivo
+        String inputNumero = JOptionPane.showInputDialog("Ingrese un número entero positivo:");
+        int numero = Integer.parseInt(inputNumero);
+  
+        // Calcular el factorial del número
+        int factorial = 1;
+        for (int i = 1; i <= numero; i++) {
+            factorial *= i;
+        }
+  
+        // Mostrar el resultado del factorial
+        String mensaje6 = "El factorial de " + numero + " es: " + factorial;
+        JOptionPane.showMessageDialog(null, mensaje6);
+        */
+
+        /* 
+        //-10)
+        //-Crea un programa que muestre los primeros 20 números de la serie Fibonacci. 
+        //La serie Fibonacci se forma sumando los dos números anteriores para obtener el siguiente número: 0, 1, 1, 2, 3, 5, 8, 13, …
+
+        // Mostrar los primeros 20 números de la serie Fibonacci
+        int numeroAnterior = 0;
+        int numeroActual = 1;
+     
+        System.out.println("Serie Fibonacci:");
+     
+        for (int i = 1; i <= 20; i++) {
+            System.out.print(numeroAnterior + " ");
+     
+            int siguienteNumero = numeroAnterior + numeroActual;
+            numeroAnterior = numeroActual;
+            numeroActual = siguienteNumero;
+        }
+        */
+        
+        /* 
+        //-11)
+        //-Escribe un programa que calcule el área de un triángulo utilizando la fórmula de Herón. 
+        //El usuario debe ingresar las longitudes de los tres lados.
+
+        // Solicitar al usuario las longitudes de los tres lados del triángulo
+        String inputLadoA = JOptionPane.showInputDialog("Ingrese la longitud del lado a:");
+        double ladoA = Double.parseDouble(inputLadoA);
+   
+        String inputLadoB = JOptionPane.showInputDialog("Ingrese la longitud del lado b:");
+        double ladoB = Double.parseDouble(inputLadoB);
+   
+        String inputLadoC = JOptionPane.showInputDialog("Ingrese la longitud del lado c:");
+        double ladoC = Double.parseDouble(inputLadoC);
+   
+        // Calcular el semiperímetro
+        double semiperimetro = (ladoA + ladoB + ladoC) / 2;
+   
+        // Calcular el área utilizando la fórmula de Herón
+        double area = Math.sqrt(semiperimetro * (semiperimetro - ladoA) * (semiperimetro - ladoB) * (semiperimetro - ladoC));
+   
+        // Mostrar el resultado del área del triángulo en un cuadro de diálogo
+        String mensaje7 = "El área del triángulo es: " + area;
+        JOptionPane.showMessageDialog(null, mensaje7);
+        */
+
+        /* 
+        //-12)
+        //-Realiza un programa que pida al usuario un número entero y determine si es un número primo o no.
+
+        // Solicitar al usuario un número entero
+        String inputNumero = JOptionPane.showInputDialog("Ingrese un número entero:");
+        int numero = Integer.parseInt(inputNumero);
+ 
+        // Verificar si el número es primo
+        boolean esPrimo = true;
+        if (numero <= 1) {
+            esPrimo = false;
+        } else {
+            for (int i = 2; i <= numero / 2; i++) {
+                if (numero % i == 0) {
+                    esPrimo = false;
+                    break;
+                }
+            }
+        }
+ 
+        // Mostrar el resultado
+        String mensaje8 = (esPrimo) ? "El número es primo." : "El número no es primo.";
+        JOptionPane.showMessageDialog(null, mensaje8);
+        */
+
+        /* 
+        //-13)
+        //-Pide al usuario un número decimal y muestra su valor redondeado a un número específico de decimales.
+
+          // Solicitar al usuario un número decimal
+        String inputNumero = JOptionPane.showInputDialog("Ingrese un número decimal:");
+        double numero = Double.parseDouble(inputNumero);
+
+        // Solicitar al usuario el número de decimales para redondear
+        String inputDecimales = JOptionPane.showInputDialog("Ingrese el número de decimales para redondear:");
+        int decimales = Integer.parseInt(inputDecimales);
+
+        // Redondear el número a la cantidad específica de decimales utilizando DecimalFormat
+        DecimalFormat decimalFormat = new DecimalFormat("#." + "0".repeat(decimales));
+        String resultado = decimalFormat.format(numero);
+
+        // Mostrar el resultado
+        JOptionPane.showMessageDialog(null, "Número redondeado: " + resultado);
+        */
+
+        //-14)
+        //-Escribe un programa que solicite al usuario un número entero positivo y verifique si es un número perfecto. 
+        //Un número perfecto es aquel cuya suma de sus divisores propios (excluyendo al propio número) es igual al número.
+
+        /* 
+        // Solicitar al usuario un número entero positivo
+        String inputNumero = JOptionPane.showInputDialog("Ingrese un número entero positivo:");
+        int numero = Integer.parseInt(inputNumero);
+
+        // Calcular la suma de los divisores propios del número
+        int sumaDivisores = 0;
+        for (int i = 1; i <= numero / 2; i++) {
+            if (numero % i == 0) {
+                sumaDivisores += i;
+            }
+        }
+
+        // Verificar si el número es un número perfecto
+        boolean esNumeroPerfecto = (sumaDivisores == numero);
+
+        // Mostrar el resultado
+        String mensaje9 = (esNumeroPerfecto) ? "El número es un número perfecto." : "El número no es un número perfecto.";
+        JOptionPane.showMessageDialog(null, mensaje9);
+        */
+
+        /* 
+        //-15)
+        //-Crea un programa que pida al usuario un número entero y determine si es un número capicúa. 
+        //Un número capicúa es aquel que se lee igual de izquierda a derecha que de derecha a izquierda.
+
+        // Solicitar al usuario un número entero
+        String inputNumero = JOptionPane.showInputDialog("Ingrese un número entero:");
+        int numero = Integer.parseInt(inputNumero);
+
+        // Convertir el número a una cadena de caracteres
+        String numeroComoCadena = Integer.toString(numero);
+
+        // Verificar si el número es un número capicúa
+        boolean esCapicua = true;
+        int longitud = numeroComoCadena.length();
+        for (int i = 0; i < longitud / 2; i++) {
+            if (numeroComoCadena.charAt(i) != numeroComoCadena.charAt(longitud - 1 - i)) {
+                esCapicua = false;
+                break;
+            }
+        }
+
+        // Mostrar el resultado
+        String mensaje10 = (esCapicua) ? "El número es un número capicúa." : "El número no es un número capicúa.";
+        JOptionPane.showMessageDialog(null, mensaje10);
+        */
+
+        /* 
+        //-16)
+        //-Realiza un programa que calcule e imprima la serie de Fibonacci hasta un número dado ingresado por el usuario. 
+
+        // Solicitar al usuario el número límite
+        String inputLimite = JOptionPane.showInputDialog("Ingrese el número límite para la serie de Fibonacci:");
+        int limite = Integer.parseInt(inputLimite);
+
+        // Imprimir la serie de Fibonacci hasta el número límite
+        int numeroAnterior = 0;
+        int numeroActual = 1;
+
+        System.out.println("Serie de Fibonacci hasta " + limite + ":");
+
+        while (numeroActual <= limite) {
+            System.out.print(numeroAnterior + " ");
+
+            int siguienteNumero = numeroAnterior + numeroActual;
+            numeroAnterior = numeroActual;
+            numeroActual = siguienteNumero;
+        }
+        */
+
+        /* 
+        //-17)
+        //-Pide al usuario dos números enteros y muestra todos los números primos que se encuentran en ese rango.
+
+        // Solicitar al usuario dos números enteros
+        String inputInicio = JOptionPane.showInputDialog("Ingrese el número de inicio del rango:");
+        int inicio = Integer.parseInt(inputInicio);
+
+        String inputFin = JOptionPane.showInputDialog("Ingrese el número de fin del rango:");
+        int fin = Integer.parseInt(inputFin);
+
+        // Mostrar los números primos en el rango
+        System.out.println("Números primos en el rango [" + inicio + ", " + fin + "]:");
+        for (int i = inicio; i <= fin; i++) {
+            if (esPrimo(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+        // Función para verificar si un número es primo
+        public static boolean esPrimo(int numero) {
+        if (numero <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+        return true;
+        */
+
+        /* 
+        //-18)
+        //-Crea un programa que genere una contraseña aleatoria de 8 caracteres que contenga letras mayúsculas, letras minúsculas y dígitos. 
+        //Puedes utilizar la clase Math para generar números aleatorios y la clase String para manipular la contraseña.
+
+        // Definir los caracteres que se pueden usar en la contraseña
+        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        // Longitud de la contraseña
+        int longitudContrasena = 8;
+
+        // Generar la contraseña aleatoria
+        String contrasena = generarContrasenaAleatoria(caracteres, longitudContrasena);
+
+        // Mostrar la contraseña generada en un cuadro de diálogo
+        JOptionPane.showMessageDialog(null, "Contraseña generada: " + contrasena);
+        }
+
+        public static String generarContrasenaAleatoria(String caracteres, int longitud) {
+        Random random = new Random();
+        StringBuilder contrasena = new StringBuilder(longitud);
+
+        for (int i = 0; i < longitud; i++) {
+            int indice = random.nextInt(caracteres.length());
+            char caracterAleatorio = caracteres.charAt(indice);
+            contrasena.append(caracterAleatorio);
+        }
+
+        return contrasena.toString();
+        */
+
+        /* 
+        //-19)
+        //-Escribe un programa que solicite al usuario su nombre y luego lo imprima en mayúsculas y minúsculas.
+
+        // Solicitar al usuario su nombre
+        String nombre = JOptionPane.showInputDialog("Ingrese su nombre:");
+
+        // Convertir el nombre a mayúsculas y mostrarlo en una ventana emergente
+        String nombreEnMayusculas = nombre.toUpperCase();
+        JOptionPane.showMessageDialog(null, "Nombre en mayúsculas: " + nombreEnMayusculas);
+
+        // Convertir el nombre a minúsculas y mostrarlo en una ventana emergente
+        String nombreEnMinusculas = nombre.toLowerCase();
+        JOptionPane.showMessageDialog(null, "Nombre en minúsculas: " + nombreEnMinusculas);
+        */
+
+        /* 
+        //-20)
+        //-Realiza un programa que solicite al usuario una cadena y luego invierta su orden.
+
+        // Solicitar al usuario una cadena
+        String cadena = JOptionPane.showInputDialog("Ingrese una cadena:");
+
+        // Invertir la cadena
+        String cadenaInvertida = invertirCadena(cadena);
+
+        // Mostrar la cadena invertida en una ventana emergente
+        JOptionPane.showMessageDialog(null, "Cadena invertida: " + cadenaInvertida);
+        }
+
+        public static String invertirCadena(String cadena) {
+        StringBuilder cadenaInvertida = new StringBuilder(cadena);
+        return cadenaInvertida.reverse().toString();
+        */
+
+        /* 
+        //-21)
+        //-Pide al usuario una cadena y muestra cuántas veces aparece una letra específica en ella.
+
+        // Solicitar al usuario una cadena
+        String cadena = JOptionPane.showInputDialog("Ingrese una cadena:");
+
+        // Solicitar al usuario la letra a buscar
+        String letraBuscada = JOptionPane.showInputDialog("Ingrese la letra a buscar:");
+
+        // Convertir la letra a buscar a minúscula (para ser insensible a mayúsculas/minúsculas)
+        letraBuscada = letraBuscada.toLowerCase();
+
+        // Contar las veces que aparece la letra en la cadena
+        int contador = contarLetra(cadena, letraBuscada);
+
+        // Mostrar el resultado en una ventana emergente
+        JOptionPane.showMessageDialog(null, "La letra '" + letraBuscada + "' aparece " + contador + " veces en la cadena.");
+        }
+
+        public static int contarLetra(String cadena, String letra) {
+        int contador = 0;
+
+        for (int i = 0; i < cadena.length(); i++) {
+            char caracter = cadena.charAt(i);
+            if (Character.toString(caracter).toLowerCase().equals(letra)) {
+                contador++;
+            }
+        }
+
+        return contador;
+        */
+
+        /* 
+        //-22)
+        //-Escribe un programa que solicite al usuario una frase y verifique si es un palíndromo 
+        //(se lee igual de izquierda a derecha que de derecha a izquierda).
+
+        // Solicitar al usuario una frase
+        String frase = JOptionPane.showInputDialog("Ingrese una frase:");
+
+        // Eliminar espacios y convertir a minúsculas (para ser insensible a mayúsculas/minúsculas)
+        String fraseSinEspacios = frase.replaceAll("\\s+", "").toLowerCase();
+
+        // Verificar si la frase es un palíndromo
+        boolean esPalindromo = esPalindromo(fraseSinEspacios);
+
+        // Mostrar el resultado en una ventana emergente
+        if (esPalindromo) {
+            JOptionPane.showMessageDialog(null, "La frase es un palíndromo.");
+        } else {
+            JOptionPane.showMessageDialog(null, "La frase NO es un palíndromo.");
+        }
+        }
+
+        public static boolean esPalindromo(String frase) {
+        int longitud = frase.length();
+        for (int i = 0; i < longitud / 2; i++) {
+            if (frase.charAt(i) != frase.charAt(longitud - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
+        */
+
+        /* 
+        //-23)
+        //-Crea un programa que pida al usuario una oración y muestre cuántas palabras contiene
+
+        // Solicitar al usuario una oración
+        String oracion = JOptionPane.showInputDialog("Ingrese una oración:");
+
+        // Contar las palabras en la oración
+        int cantidadPalabras = contarPalabras(oracion);
+
+        // Mostrar el resultado en una ventana emergente
+        JOptionPane.showMessageDialog(null, "La oración tiene " + cantidadPalabras + " palabras.");
+        }
+
+        public static int contarPalabras(String oracion) {
+        // Eliminar espacios en blanco al inicio y al final de la oración
+        oracion = oracion.trim();
+
+        // Si la oración está vacía, no hay palabras
+        if (oracion.isEmpty()) {
+            return 0;
+        }
+
+        // Contar las palabras contando los espacios en blanco
+        int cantidadPalabras = 1;
+        for (int i = 0; i < oracion.length(); i++) {
+            if (oracion.charAt(i) == ' ') {
+                cantidadPalabras++;
+            }
+        }
+
+        return cantidadPalabras;
+        */
+
+        //-24)
+        //-Realiza un programa que solicite al usuario una cadena y reemplace todas las apariciones de una letra específica por otra.
         
    }
 }
+
